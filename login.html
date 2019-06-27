@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="login.css">
+
+
+</head>
+
+<body>
+    <div id="app">
+
+        <el-row>
+            <el-col :span="8">
+                <h2>登录</h2>
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-col :span="12">
+                <el-input placeholder="请输入手机号" v-model="username"></el-input>
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-col :span="12">
+                <el-input placeholder="请输入密码" v-model="password" show-password></el-input>
+            </el-col>
+        </el-row>
+        <el-row :gutter="20">
+            <el-col :span="7">
+                <el-input placeholder="请验证码" v-model="password" show-password></el-input>
+            </el-col>
+            <el-col :span="5">
+                <el-image style="width:100px; height: 40px" :src="url" :fit="fits"></el-image>
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-button type="primary" v-on:click="signIn">Sign In</el-button>
+        </el-row>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="login.js"></script>
+
+</html>
