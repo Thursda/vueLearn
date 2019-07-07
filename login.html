@@ -2,46 +2,80 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.10.0/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="login.css">
-
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 </head>
 
 <body>
     <div id="app">
+        <div class="loginForm">
 
-        <el-row>
-            <el-col :span="8">
-                <h2>登录</h2>
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-col :span="12">
-                <el-input placeholder="请输入手机号" v-model="username"></el-input>
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-col :span="12">
-                <el-input placeholder="请输入密码" v-model="password" show-password></el-input>
-            </el-col>
-        </el-row>
-        <el-row :gutter="20">
-            <el-col :span="7">
-                <el-input placeholder="请验证码" v-model="password" show-password></el-input>
-            </el-col>
-            <el-col :span="5">
-                <el-image style="width:100px; height: 40px" :src="url" :fit="fits"></el-image>
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-button type="primary" v-on:click="signIn">Sign In</el-button>
-        </el-row>
+            <el-row :gutter="20" type="flex" justify="center">
+                <h2 align:center>登录</h2>
+            </el-row>
+            <el-row :gutter="20" type="flex" justify="center">
+                <el-col :span="22">
+                    <el-input placeholder="请输入手机号" v-model="username"></el-input>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20" type="flex" justify="center">
+                <el-col :span="22">
+                    <el-input placeholder="请输入密码" v-model="password" show-password></el-input>
+                </el-col>
+            </el-row>
+
+            <el-row :gutter="20" type="flex" justify="center">
+                <el-col :span="14">
+                    <el-input placeholder="请输入验证码" v-model="imgcode"></el-input>
+                </el-col>
+                <el-col :span="8">
+                    <el-image style="width:100px; height: 40px" :src="url"></el-image>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20" type="flex" justify="center">
+                <el-col :span="22">
+                    <el-button type="primary" v-on:click="signIn" style="width: 360px;">登 录</el-button>
+                </el-col>
+            </el-row>
+        </div>
+
+        <br>
+        <div class="wd1200 form-container loginForm">
+            <el-row :gutter=" 0 ">
+                <el-col :span="22 " class="bg1 ">
+                    <div id="form-cnt ">
+                        <el-row :gutter="20" type="flex" justify="center">
+                            <h2 align:center>登录</h2>
+                        </el-row>
+                        <el-form :label-position="labelPosition " :model="formLabelAlign ">
+                            <el-form-item>
+                                <el-input v-model="formLabelAlign.name " placeholder="请填写手机号码 " clearable></el-input>
+                            </el-form-item>
+                            <el-form-item class="pos-rel ">
+                                <el-input class="father-clear " v-model="formLabelAlign.region " placeholder="请输入密码 " clearable></el-input>
+                            </el-form-item>
+                        </el-form>
+                        <!-- 提交按钮 -->
+                        <el-row class="mgt67 ">
+                            <el-button type="primary " class="sub-btn sub1 ">立即登录</el-button>
+                        </el-row>
+                        <el-row class="mgt23 ">
+                            <el-button type="primary " plain class="sub-btn sub2 ">没有账号？立即注册</el-button>
+                        </el-row>
+                    </div>
+                </el-col>
+                <el-col :span="12 " class="bg2 ">&nbsp;&nbsp;</el-col>
+            </el-row>
+
+
+        </div>
+
     </div>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-<script src="login.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue "></script> -->
+<script src="https://unpkg.com/element-ui@2.10.0/lib/index.js "></script>
+<script src="login.js "></script>
 
 </html>

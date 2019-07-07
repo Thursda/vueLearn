@@ -1,8 +1,10 @@
 var app = new Vue({
     el: '#app',
     data: {
+        formLabelAlign: { name: "", password: "" },
         username: '',
         password: '',
+        imgcode: '',
         nonce: '',
         rememberme: false,
         fits: ['fill'],
@@ -10,7 +12,7 @@ var app = new Vue({
     },
     methods: {
         signIn: function() {
-            alert("sign in");
+            alert("name:" + this.username + "\tpassword:" + this.password + "\tsign in");
         }
     }
 })
